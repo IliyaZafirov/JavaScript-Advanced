@@ -2,7 +2,7 @@ function encodeAndDecodeMessages() {
     const [encode, decode] = document.querySelectorAll('textarea');
     const [encodeBtn, decodeBtn] = document.querySelectorAll('button');
 
-    encodeBtn.addEventListener('click', (e) => {
+    encodeBtn.addEventListener('click', () => {
         let charCodes = [];
 
         for (let el of encode.value) {
@@ -17,7 +17,7 @@ function encodeAndDecodeMessages() {
         encode.value = '';
     });
 
-    decodeBtn.addEventListener('click', (e) => {
+    decodeBtn.addEventListener('click', () => {
         let codedChars = [];
 
         for (let el of decode.value) {
