@@ -20,8 +20,6 @@ function solution() {
     }
 }
 
-
-
 let firstZeroTest = solution();
 
 firstZeroTest.append('hello');
