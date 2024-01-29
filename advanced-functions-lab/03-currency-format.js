@@ -24,6 +24,18 @@
 // Output
 // You need to return a function that takes one parameter - value
 
-function foo(a, b, c, d) {
+function createFormatter(a, b, c, d) {
     return d.bind(null, a, b, c)
 }
+
+function currencyFormatter(separator, symbol, symbolFirst, value) {
+    let result = Math.trunc(value) + separator;
+    result += value.toFixed(2).substr(-2,2);
+    if (symbolFirst) return symbol + ' ' + result;
+    else return result + ' ' + symbol;
+}
+
+let dollarFormatter = createFormatter(',', '$', true, currencyFormatter);
+console.log(dollarFormatter(5345));   // $ 5345,00
+console.log(dollarFormatter(3.1429)); // $ 3,14
+console.log(dollarFormatter(2.709));  // $ 2,71
