@@ -1,4 +1,15 @@
 {
+  "name": "javascript-advanced",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
     "chai": "^5.0.3",
     "mocha": "^10.2.0"
