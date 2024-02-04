@@ -46,7 +46,7 @@ function solve() {
         // append to Open Section
         openSection.appendChild(article);
 
-        // clear add task input values
+        // clear input values
         Object.values(input).forEach(el => el.value = '');
 
         // ** add functionality for start, delete and finish task
