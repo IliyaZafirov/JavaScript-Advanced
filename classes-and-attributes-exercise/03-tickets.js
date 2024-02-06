@@ -7,61 +7,63 @@
 // Output
 // Return a sorted array of all the tickets that were registered.
 
-function ticketsStatistics(arrOfTickets, sortCriteria) {
+function ticketStatistics(arrOfTickets, sortCriteria) {
 
     const result = [];
 
     class Ticket {
+
         constructor(destination, price, status) {
             this.destination = destination;
             this.price = Number(price);
             this.status = status;
         }
 
-        static sort(ticketArr, criteria) {
-            return ticketArr.sort((a, b) => {
+        static sort(result, criteria) {
+            return result.sort((a, b) => {
                 return criteria === 'price' ? a[criteria] - b[criteria] : a[criteria].localeCompare(b[criteria]);
             })
         }
     }
 
     for (const el of arrOfTickets) {
-        let [destination, price, status] = el.split('|');
-        const myTicket = new Ticket(destination, price, status);
-
-        result.push(myTicket);
+        const [destination, price, status] = el.split('|');
+        const instance = new Ticket(destination, price, status);
+        result.push(instance);
     }
 
     return Ticket.sort(result, sortCriteria);
 }
 
-// function ticketsStatistics(arrOfTickets, sortCriteria) {
+// function ticketStatistics(arrOfTickets, sortCriteria) {
 
 //     const result = [];
 
 //     class Ticket {
+
 //         constructor(destination, price, status) {
 //             this.destination = destination;
 //             this.price = Number(price);
 //             this.status = status;
 //         }
 
+
 //     }
 
 //     for (const el of arrOfTickets) {
-//         let [destination, price, status] = el.split('|');
-//         const myTicket = new Ticket(destination, price, status);
-
-//         result.push(myTicket);
+//         const [destination, price, status] = el.split('|');
+//         const instance = new Ticket(destination, price, status);
+//         result.push(instance);
 //     }
 
-//     function sortTicket(ticketArr, criteria) {
-//         return ticketArr.sort((a, b) => {
+//     function sortByCriteria(ticketArr, criteria) {
+//         return result.sort((a, b) => {
 //             return criteria === 'price' ? a[criteria] - b[criteria] : a[criteria].localeCompare(b[criteria]);
 //         })
 //     }
 
-//     return sortTicket(result, sortCriteria);
+//     return sortByCriteria(result, sortCriteria);
+
 // }
 
 const res = ticketsStatistics(['Philadelphia|94.20|available',
