@@ -37,7 +37,7 @@ class List {
     }
 
     get(idx) {
-        if (idx < 0 || idx > this.list.length - 1) {
+        if (idx < 0 || idx > this.list.length -1) {
             throw new Error();
         }
         return this.list[idx];
