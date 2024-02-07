@@ -27,7 +27,13 @@ class List {
     }
 
     remove(idx) {
-
+        if (idx < 0 || idx > this.list.length -1) {
+            throw new Error();
+        }
+        this.size--;
+        this.list.splice(idx, 1);
+        this.list.sort((a, b) => a - b);
+        return;
     }
 
     get(idx) {
