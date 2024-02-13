@@ -5,5 +5,7 @@ function notify(message) {
 
   const wrapper = document.getElementById('notification');
   wrapper.textContent = message;
-  wrapper.style.display = wrapper.style.display == 'block' ? wrapper.style.display = 'none' : wrapper.style.display = 'block';
+  wrapper.style.display = 'block'
+  wrapper.addEventListener('click', () => wrapper.style.display = 'none');
+  
 }
